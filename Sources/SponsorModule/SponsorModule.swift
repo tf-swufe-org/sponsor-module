@@ -8,11 +8,18 @@
 import Vapor
 import Fluent
 import ViperKit
-import SystemModule
+import FeatherCore
 
 final class SponsorModule: ViperModule {
 
     static var name: String = "sponsor"
+    
+    var viewsUrl: URL? {
+        Bundle.module.bundleURL
+            .appendingPathComponent("Contents")
+            .appendingPathComponent("Resources")
+            .appendingPathComponent("Views")
+    }
     
     // MARK: - hook functions
 

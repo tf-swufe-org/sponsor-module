@@ -8,8 +8,8 @@
 import Foundation
 import ViperKit
 
-//@_cdecl("createModule")
-public func createModule() -> UnsafeMutableRawPointer {
+@_cdecl("createSponsorModule")
+public func createSponsorModule() -> UnsafeMutableRawPointer {
     return Unmanaged.passRetained(SponsorBuilder()).toOpaque()
 }
 
