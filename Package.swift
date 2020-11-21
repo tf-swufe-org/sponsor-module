@@ -10,20 +10,16 @@ let package = Package(
         .library(name: "SponsorModule", targets: ["SponsorModule"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/binarybirds/feather-core", .branch("main")),
+        .package(url: "https://github.com/binarybirds/feather-core", from: "1.0.0-beta"),
     ],
     targets: [
-        .target(name: "SponsorModule",
-                dependencies: [
-                    .product(name: "FeatherCore", package: "feather-core"),
-                ],
-                resources: [
-                    .copy("Views"),
-                ]
-        ),
-        .testTarget(name: "SponsorModuleTests",
-                    dependencies: [
-                        .target(name: "SponsorModule"),
-                    ])
+        .target(name: "SponsorModule", dependencies: [
+            .product(name: "FeatherCore", package: "feather-core"),
+        ], resources: [
+            .copy("Bundle"),
+        ]),
+        .testTarget(name: "SponsorModuleTests",dependencies: [
+            .target(name: "SponsorModule"),
+        ])
     ]
 )

@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  SponsorModuleTests.swift
+//  SponsorModule
 //
 //  Created by Tibor Bodecs on 2020. 08. 23..
 //
