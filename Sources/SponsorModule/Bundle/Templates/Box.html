@@ -1,12 +1,12 @@
 #if($system["sponsor.isEnabled"] != nil && $system["sponsor.isEnabled"] == "true"):
-<div class="wrapper w center">
-    <section id="share" class="m:xl">
-        <hr>
-        <img src="#($system["sponsor.image.url"])" alt="#($system["sponsor.image.alt"])">
+<div class="content t:center m:v:xl">
+    <hr class="m:v:xl">
+    <div id="share" class="">
+        <img class="m:h:auto block" src="#($system["sponsor.image.url"])" alt="#($system["sponsor.image.alt"])">
         <h3>#($system["sponsor.title"])</h3>
         <p>#($system["sponsor.description"])</p>
-        <a class="cta" href="#($system["sponsor.button.url"])" target="_blank">#($system["sponsor.button.title"])</a>
-        <a class="link" href="#($system["sponsor.more.url"])">#($system["sponsor.more.title"])</a>
+        <a class="block m:b" href="#($system["sponsor.button.url"])" target="_blank">#($system["sponsor.button.title"])</a>
+        <a class="t:size:xs m:t" href="#($system["sponsor.more.url"])">#($system["sponsor.more.title"])</a>
     </div>
-</section>
+</div>
 #endif
