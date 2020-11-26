@@ -1,8 +1,8 @@
 #if($system["sponsor.isEnabled"] != nil && $system["sponsor.isEnabled"] == "true"):
 <div class="content t:center m:v:xl">
     <hr class="m:v:xl">
-    <div id="share" class="">
-        <img class="m:h:auto block" src="#($system["sponsor.image.url"])" alt="#($system["sponsor.image.alt"])">
+    <div id="share" class="m">
+        <img class="w:256 m:h:auto" src="#($system["sponsor.image.url"])" alt="#($system["sponsor.image.alt"])">
         <h3>#($system["sponsor.title"])</h3>
         <p>#($system["sponsor.description"])</p>
         <a class="block m:b" href="#($system["sponsor.button.url"])" target="_blank">#($system["sponsor.button.title"])</a>
