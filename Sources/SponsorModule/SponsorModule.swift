@@ -11,7 +11,7 @@ final class SponsorModule: ViperModule {
 
     static var name: String = "sponsor"
 
-    var bundleUrl: URL? {
+    static var bundleUrl: URL? {
         Bundle.module.resourceURL?.appendingPathComponent("Bundle")
     }
 
