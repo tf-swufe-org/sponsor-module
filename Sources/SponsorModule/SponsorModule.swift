@@ -50,7 +50,7 @@ final class SponsorModule: ViperModule {
             [
                 "key": "sponsor.image.url",
                 "name": "Sponsor image URL",
-                "value": "https://theswiftdev.com/images/logos/logo.png",
+                "value": "https://theswiftdev.com/images/icons/icon-320.png",
                 "note": "Image URL for the sponsor box",
             ],
             [
