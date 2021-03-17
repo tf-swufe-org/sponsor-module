@@ -1,11 +1,11 @@
 #if($system.variables["sponsor.isEnabled"] != nil && $system.variables["sponsor.isEnabled"] == "true"):
-<div class="container sponsor-box">
-    <div class="margin margin-vertical-xl border-radius-s padding background shadow-xl">
-        <img class="display-block size-height" src="#($system.variables["sponsor.image.url"])" alt="#($system.variables["sponsor.image.alt"])">
-        <h3 class="margin-top">#($system.variables["sponsor.title"])</h3>
-        <p class="margin-top margin-bottom">#($system.variables["sponsor.description"])</p>
-        <a class="button margin-bottom" href="#($system.variables["sponsor.button.url"])" target="_blank">#($system.variables["sponsor.button.title"])</a>
-        <a class="display-block text-size-s color-gray" href="#($system.variables["sponsor.more.url"])">#($system.variables["sponsor.more.title"])</a>
+<div class="card">
+    <div class="content">
+        <img src="#($system.variables["sponsor.image.url"])" alt="#($system.variables["sponsor.image.alt"])">
+        <h3>#($system.variables["sponsor.title"])</h3>
+        <p>#($system.variables["sponsor.description"])</p>
+        <a href="#($system.variables["sponsor.button.url"])" target="_blank">#($system.variables["sponsor.button.title"])</a>
+        <a href="#($system.variables["sponsor.more.url"])">#($system.variables["sponsor.more.title"])</a>
     </div>
 </div>
 #endif
