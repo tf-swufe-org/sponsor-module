@@ -7,76 +7,66 @@
 
 import FeatherCore
 
-final class SponsorModule: ViperModule {
+final class SponsorModule: FeatherModule {
 
-    static var name: String = "sponsor"
+    static let moduleKey: String = "sponsor"
 
-    static var bundleUrl: URL? {
+    var bundleUrl: URL? {
         Bundle.module.resourceURL?.appendingPathComponent("Bundle")
     }
 
     func boot(_ app: Application) throws {
-        app.hooks.register("system-variables-install", use: systemVariablesInstallHook)
+        app.hooks.register(.installVariables, use: installVariablesHook)
     }
 
     // MARK: - hooks
     
-    func systemVariablesInstallHook(args: HookArguments) -> [[String: Any]] {
+    func installVariablesHook(args: HookArguments) -> [VariableCreateObject] {
         [
-            [
-                "key": "sponsor.isEnabled",
-                "name": "Sponsor box enabled",
-                "value": "true",
-                "note": "If enabled the box will appear when you inline the Sponsor/Box template",
-            ],
-            [
-                "key": "sponsor.title",
-                "name": "Sponsor box title",
-                "value": "Sponsor title",
-                "note": "Title of the sponsor box",
-            ],
-            [
-                "key": "sponsor.description",
-                "name": "Sponsor box description",
-                "value": "Sponsor description",
-                "note": "Used as a content for the sponsor box (can contain HTML text)",
-            ],
-            [
-                "key": "sponsor.image.alt",
-                "name": "Sponsor image alt text",
-                "value": "The.Swift.Dev.",
-                "note": "Alternative text for the sponsor image",
-            ],
-            [
-                "key": "sponsor.image.url",
-                "name": "Sponsor image URL",
-                "value": "https://theswiftdev.com/images/icons/icon-320.png",
-                "note": "Image URL for the sponsor box",
-            ],
-            [
-                "key": "sponsor.button.title",
-                "name": "Sponsor CTA button title",
-                "value": "The.Swift.Dev.",
-                "note": "CTA button title for the sponsor box",
-            ],
-            [
-                "key": "sponsor.button.url",
-                "name": "Sponsor CTA button url",
-                "value": "https://theswiftdev.com/",
-                "note": "CTA button link for the sponsor box",
-            ],
-            [
-                "key": "sponsor.more.title",
-                "name": "Sponsor more button title",
-                "value": "Learn more",
-                "note": "Learn more button title for the sponsor box",
-            ],
-            [
-                "key": "sponsor.more.url",
-                "name": "Sponsor more button url",
-                "value": "/about/",
-                "note": "Learn more button url for the sponsor box",
-            ],
+            .init(key: "sponsorBoxIsEnabled",
+                  name: "Sponsor box enabled",
+                  value: "true",
+                  notes: "If enabled the box will appear when you inline the Sponsor/Box template"),
+            
+            .init(key: "sponsorTitle",
+                  name: "Sponsor box title",
+                  value: "Sponsor title",
+                  notes: "Title of the sponsor box"),
+            
+            .init(key: "sponsorExcerpt",
+                  name: "Sponsor box excerpt",
+                  value: "Sponsor excerpt",
+                  notes: "Used as a content for the sponsor box (can contain HTML text)"),
+            
+            .init(key: "sponsorImageUrl",
+                  name: "Sponsor image URL",
+                  value: "https://theswiftdev.com/images/icons/icon-320.png",
+                  notes: "Image URL for the sponsor box"),
+            
+            .init(key: "sponsorImageAlt",
+                  name: "Sponsor image alt text",
+                  value: "The.Swift.Dev.",
+                  notes: "Alternative text for the sponsor image"),
+            
+            .init(key: "sponsorButtonLabel",
+                  name: "Sponsor CTA button title",
+                  value: "The.Swift.Dev.",
+                  notes: "CTA button title for the sponsor box"),
+            
+            .init(key: "sponsorButtonUrl",
+                  name: "Sponsor CTA button URL",
+                  value: "https://theswiftdev.com/",
+                  notes: "CTA button link for the sponsor box"),
+            
+            .init(key: "sponsorMoreLabel",
+                  name: "Sponsor more button title",
+                  value: "Learn more",
+                  notes: "CTA button title for the sponsor box"),
+            
+            .init(key: "sponsorMoreUrl",
+                  name: "Sponsor more button url",
+                  value: "/about/",
+                  notes: "Learn more button url for the sponsor box"),
         ]
     }
 }

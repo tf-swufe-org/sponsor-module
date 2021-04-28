@@ -12,9 +12,9 @@ public func createSponsorModule() -> UnsafeMutableRawPointer {
     return Unmanaged.passRetained(SponsorBuilder()).toOpaque()
 }
 
-public final class SponsorBuilder: ViperBuilder {
+public final class SponsorBuilder: FeatherModuleBuilder {
 
-    public override func build() -> ViperModule {
+    public override func build() -> FeatherModule {
         SponsorModule()
     }
 }

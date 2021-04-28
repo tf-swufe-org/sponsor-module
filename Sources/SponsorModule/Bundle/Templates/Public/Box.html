@@ -1,0 +1,11 @@
+#if($variables.sponsorBoxIsEnabled != nil && $variables.sponsorBoxIsEnabled == "true"):
+<div class="card">
+    <div class="content">
+        <img src="#($variables.sponsorImageUrl ?? "")" alt="#($variables.sponsorImageAlt ?? "")">
+        <h3>#($variables.sponsorTitle ?? "")</h3>
+        <p>#($variables.sponsorExcerpt ?? "")</p>
+        <a href="#($variables.sponsorButtonUrl ?? "")" target="_blank">#($variables.sponsorButtonLabel ?? "")</a>
+        <a href="#($variables.sponsorMoreUrl ?? "")">#($variables.sponsorMoreLabel ?? "")</a>
+    </div>
+</div>
+#endif
