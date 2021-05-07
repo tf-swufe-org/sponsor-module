@@ -11,9 +11,7 @@ final class SponsorModule: FeatherModule {
 
     static let moduleKey: String = "sponsor"
 
-    var bundleUrl: URL? {
-        Bundle.module.resourceURL?.appendingPathComponent("Bundle")
-    }
+    static var bundleUrl: URL? { Bundle.module.resourceURL?.appendingPathComponent("Bundle") }
 
     func boot(_ app: Application) throws {
         app.hooks.register(.installVariables, use: installVariablesHook)
